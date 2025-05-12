@@ -11,6 +11,7 @@ sleep 1
 v4l2-ctl -d $VDEV -c focus_automatic_continuous=0,focus_absolute=$SH
 v4l2-ctl -d $VDEV -c brightness=150,white_balance_automatic=0,white_balance_temperature=2500,brightness=150,contrast=5,focus_automatic_continuous=0,focus_absolute=$SH
 OUTFILE="Out/$(/bin/date +"%Y-%m-%d-%H-%M-%S")-$RANDOM.mp4"
+mkdir -p Out
 
 FONT=/usr/share/fonts/adobe-source-code-pro/SourceCodePro-Medium.otf
 BESTIES=" -c:v libx264 -preset fast -crf 22 -tune grain -tune zerolatency "
